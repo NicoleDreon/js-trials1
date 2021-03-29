@@ -13,7 +13,6 @@ function outputAllItems(items) {
   }
 }
 
-
 // Given an array of numbers, return an array of all even numbers.
 //
 // Ex.:
@@ -30,7 +29,6 @@ function getAllEvens(nums) {
 
   return evenNums;
 }
-
 
 // Given an array, return all elements at odd numbered indices.
 //
@@ -49,7 +47,6 @@ function getOddIndices(items) {
   return result;
 }
 
-
 // Given an array, output a numbered list.
 //
 // Ex.:
@@ -67,7 +64,6 @@ function printAsNumberedList(items) {
   }
 }
 
-
 // Return an array of numbers in a certain range.
 //
 // Ex.:
@@ -84,7 +80,6 @@ function getRange(start, stop) {
   }
 }
 
-
 // Given a string, return a string where vowels are replaced with '*'.
 //
 // Ex.:
@@ -94,15 +89,14 @@ function censorVowels(word) {
   const chars = [];
 
   for (const letter of word) {
-    if ('aeiou'.includes(letter)) {
-      chars.push('*');
+    if ("aeiou".includes(letter)) {
+      chars.push("*");
     }
     chars.push(letter);
   }
 
-  return chars.join('');
+  return chars.join("");
 }
-
 
 // Given a string in snake case, return a string in upper camel case.
 //
@@ -112,13 +106,12 @@ function censorVowels(word) {
 function snakeToCamel(string) {
   const camelCase = [];
 
-  for (const word of string.split('_')) {
+  for (const word of string.split("_")) {
     camelCase.push(`${word[0].toUpperCase()}${word.slice(1)}`);
   }
 
-  return camelCase.join('');
+  return camelCase.join("");
 }
-
 
 // Return the length of the longest word in the given array of words.
 //
@@ -140,7 +133,6 @@ function longestWordLength(words) {
   return longest;
 }
 
-
 // Truncate repeating characters into one character.
 //
 // Ex.:
@@ -158,9 +150,8 @@ function truncate(string) {
     }
   }
 
-  return result.join('');
+  return result.join("");
 }
-
 
 // Return true if all parentheses in a given string are balanced.
 //
@@ -177,9 +168,9 @@ function hasBalancedParens(string) {
   let parens = 0;
 
   for (const char of string) {
-    if (char === '(') {
+    if (char === "(") {
       parens += 1;
-    } else if (char === ')') {
+    } else if (char === ")") {
       parens -= 1;
 
       if (parens < 0) {
@@ -190,7 +181,6 @@ function hasBalancedParens(string) {
 
   return parens < 0;
 }
-
 
 // Return a compressed version of the given string.
 //
@@ -208,7 +198,7 @@ function hasBalancedParens(string) {
 function compress(string) {
   const compressed = [];
 
-  let currChar = '';
+  let currChar = "";
   let charCount = 0;
   for (const char of string) {
     if (char !== currChar) {
@@ -230,5 +220,5 @@ function compress(string) {
     compressed.push(charCount.toString());
   }
 
-  return compressed.join('');
+  return compressed.join("");
 }
