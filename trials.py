@@ -65,20 +65,69 @@ def censor_vowels(word):
 
 
 def snake_to_camel(string):
-    pass  # TODO: replace this line with your code
+    camel_case = []
+    words = string.split("_")
+
+    for word in words:
+        camel_case.append(word.capitalize())
+
+    return ''.join(camel_case)
 
 
 def longest_word_length(words):
-    pass  # TODO: replace this line with your code
+    longest = 0
+
+    for word in words:
+        if longest < len(word):
+            longest = len(word)
+
+    return longest
 
 
 def truncate(string):
-    pass  # TODO: replace this line with your code
+    result = []
+
+    for char in string:
+        if len(result) == 0 or char != result[len(result) - 1]:
+            result.append(char)
+
+    return ''.join(result)
 
 
 def has_balanced_parens(string):
-    pass  # TODO: replace this line with your code
+    parens = 0
+
+    for char in string:
+        if char == '(':
+            parens += 1
+        elif char == ')':
+            parens -= 1
+
+    if parens != 0:
+        return False
+    else:
+        return True
 
 
 def compress(string):
-    pass  # TODO: replace this line with your code
+    compressed = []
+    curr_char = ""
+    char_count = 0
+
+    for char in string:
+        if char != curr_char:
+
+            print(f'char ={char}')
+            if char_count > 1:
+                compressed.append(str(char_count))
+                print(char_count)
+            compressed.append(char)
+            curr_char = char
+            char_count = 0
+
+        char_count += 1
+
+    if char_count > 1:
+        compressed.append(str(char_count))
+
+    return ''.join(compressed)
